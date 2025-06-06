@@ -7,12 +7,18 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>DentalCare - Exceptional Dental Implants & General Dentistry</title>
-        <meta name="description" content="DentalCare provides exceptional dental implants and general dentistry services with a focus on patient comfort and advanced technology." />
-        <meta name="keywords" content="dentist, dental implants, general dentistry, cosmetic dentistry, family dentist" />
-        <link rel="canonical" href="https://dentalcare.com" />
+        <title>Dra. Marina Sanini da Rosa | Odontologia Especializada em São Paulo</title>
+        <meta
+          name="description"
+          content="Clínica odontológica da Dra. Marina Sanini da Rosa. Especializada em implantes dentários, odontologia estética e atendimento humanizado em São Paulo."
+        />
+        <meta
+          name="keywords"
+          content="dentista São Paulo, Dra. Marina Sanini da Rosa, implantes dentários, odontologia estética, clínica odontológica, dentista especializada"
+        />
+        <link rel="canonical" href="https://marinaodontologia.com.br" />
       </Helmet>
-      
+
       <Hero />
       <Services />
       {/* <Testimonials /> */}
