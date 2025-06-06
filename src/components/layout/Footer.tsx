@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center text-2xl font-heading font-bold text-white mb-4">
               <img
-                src="/MO símbolo - invert.png"
+                src="/MO-simbolo-invert.png"
                 alt="Dra. Marina Sanini da Rosa"
                 className="w-7 h-7 mr-2"
               />

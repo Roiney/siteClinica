@@ -50,7 +50,7 @@ const Header = () => {
             className="flex items-center"
           >
             <img 
-              src="/MO símbolo.png"
+              src="/MO-simbolo.png"
               alt="Dra. Marina Sanini da Rosa" 
               className="h-12 w-auto"
             />
