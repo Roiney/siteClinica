@@ -22,7 +22,7 @@ const Footer = () => {
               Atendimento odontológico de excelência, com tecnologia de ponta e cuidado humanizado há mais de 10 anos.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/ma.ri.marina/" className="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>   
             </div>

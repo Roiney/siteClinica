@@ -18,7 +18,7 @@ const ContactSection = () => {
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/seuusuario',
+      url: 'https://www.instagram.com/ma.ri.marina/',
       color: 'hover:text-pink-600'
     },
   ];
