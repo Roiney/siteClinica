@@ -5,10 +5,10 @@ const TeamPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Expert Dental Team | DentalCare</title>
-        <meta name="description" content="Meet our team of experienced dental professionals specializing in implants, cosmetic, and general dentistry." />
-        <meta name="keywords" content="dental team, dentists, dental specialists, dental implant experts" />
-        <link rel="canonical" href="https://dentalcare.com/team" />
+        <title>Nossa Equipe | Dra. Marina Sanini da Rosa</title>
+        <meta name="description" content="Conheça a equipe de profissionais especializados em implantes, odontologia estética e geral da Dra. Marina Sanini da Rosa." />
+        <meta name="keywords" content="equipe odontológica, dentistas, especialistas em implantes, Dra. Marina" />
+        <link rel="canonical" href="https://marinaodontologia.com.br/equipe" />
       </Helmet>
       
       <section className="py-16 bg-gradient-to-b from-gray-100 to-white">

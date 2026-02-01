@@ -67,7 +67,7 @@ const ContactSection = () => {
           <div>
             <h5 className="font-semibold text-foreground">E-mail</h5>
             <a
-              href="mailto:contato@clinica.com.br"
+              href="mailto:mrsanini@gmail.com"
               className="text-primary hover:text-primary/80 transition-colors"
             >
               mrsanini@gmail.com
@@ -124,7 +124,7 @@ const ContactSection = () => {
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Sábado:</span>
-            <span className="text-foreground">8:00 - 14:00</span>
+            <span className="text-foreground">9:00 - 13:00</span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Domingo:</span>

@@ -16,10 +16,10 @@ const BlogPage = () => {
   return (
     <>
       <Helmet>
-        <title>Dental Health Blog | DentalCare</title>
-        <meta name="description" content="Expert articles and advice on dental implants, general dentistry, and maintaining optimal oral health." />
-        <meta name="keywords" content="dental blog, dental health, dental implants, oral health tips" />
-        <link rel="canonical" href="https://dentalcare.com/blog" />
+        <title>Blog de Saúde Bucal | Dra. Marina Sanini da Rosa</title>
+        <meta name="description" content="Artigos e dicas sobre implantes dentários, odontologia geral e como manter sua saúde bucal em dia." />
+        <meta name="keywords" content="blog odontologia, saúde bucal, implantes dentários, dicas de saúde oral" />
+        <link rel="canonical" href="https://marinaodontologia.com.br/blog" />
       </Helmet>
       
       <section className="py-16 bg-gradient-to-b from-gray-100 to-white">

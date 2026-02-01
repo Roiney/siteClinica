@@ -1,4 +1,4 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -6,15 +6,26 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  
+
+  const whatsappNumber = "5511975681709";
+  const whatsappMessage = "Olá! Gostaria de agendar uma avaliação com a Dra. Marina.";
+
   const toggleMenu = () => setIsOpen(!isOpen);
-  
+
+  const handleWhatsApp = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  };
+
+  const handleCall = () => {
+    window.open(`tel:+${whatsappNumber}`, '_self');
+  };
+
   const navLinks = [
-    { name: 'Início', path: '/' },
-    { name: 'Nossos Serviços', path: '/#services' },
-    // { name: 'Nossa Equipe', path: '/team' },
-    // { name: 'Blog', path: '/blog' },
-    { name: 'Contato', path: '/contact' },
+    { name: 'Início', path: '/', isAnchor: false },
+    { name: 'Serviços', path: '/#services', isAnchor: true },
+    { name: 'Resultados', path: '/#casos', isAnchor: true },
+    { name: 'A Clínica', path: '/#clinica', isAnchor: true },
+    { name: 'Depoimentos', path: '/#testimonials', isAnchor: true },
   ];
   
   useEffect(() => {
@@ -62,32 +73,34 @@ const Header = () => {
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-6">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.path}
-                to={link.path}
-                className={`font-medium transition-colors ${
-                  location.pathname === link.path
-                    ? 'text-primary'
-                    : isScrolled
-                      ? 'text-gray-800 hover:text-primary'
-                      : 'text-gray-800 hover:text-primary'
-                }`}
+                href={link.path}
+                className={`font-medium transition-colors text-gray-800 hover:text-primary`}
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </nav>
-          
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link
-              to="/contact"
-              className="btn-primary"
+
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={handleCall}
+              className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors"
             >
-              Agendar Consulta
-            </Link>
+              <Phone className="w-4 h-4" />
+              <span className="text-sm font-medium">(11) 97568-1709</span>
+            </button>
+            <button
+              onClick={handleWhatsApp}
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-all"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>WhatsApp</span>
+            </button>
           </div>
           
           {/* Mobile Menu Toggle */}
@@ -107,26 +120,32 @@ const Header = () => {
           isOpen ? 'max-h-screen py-4' : 'max-h-0 overflow-hidden'
         }`}
       >
-        <div className="container-custom flex flex-col space-y-4">
+        <div className="container-custom flex flex-col space-y-2">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.path}
-              to={link.path}
-              className={`py-2 px-4 font-medium ${
-                location.pathname === link.path
-                  ? 'text-primary bg-gray-50'
-                  : 'text-gray-800 hover:text-primary hover:bg-gray-50'
-              }`}
+              href={link.path}
+              onClick={() => setIsOpen(false)}
+              className="py-3 px-4 font-medium text-gray-800 hover:text-primary hover:bg-gray-50 rounded-lg"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
-          <Link
-            to="/contact"
-            className="btn-primary mt-4 w-full text-center"
+          <hr className="my-2 border-gray-200" />
+          <button
+            onClick={() => { handleCall(); setIsOpen(false); }}
+            className="flex items-center gap-3 py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg"
           >
-            Agendar Consulta
-          </Link>
+            <Phone className="w-5 h-5 text-primary" />
+            <span className="font-medium">(11) 97568-1709</span>
+          </button>
+          <button
+            onClick={() => { handleWhatsApp(); setIsOpen(false); }}
+            className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg mt-2"
+          >
+            <MessageCircle className="w-5 h-5" />
+            <span>Agendar pelo WhatsApp</span>
+          </button>
         </div>
       </div>
     </header>

@@ -1,131 +1,123 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "Dental Implant Patient",
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600",
-    content: "Getting dental implants at DentalCare was the best decision I've made. The team made me feel comfortable throughout the entire process, and I can finally smile with confidence again.",
+    name: "Roiney Beal",
+    location: "Google Reviews",
+    treatment: "Tratamento Completo",
+    highlight: "Superou totalmente minhas expectativas!",
+    text: "Minha experiência na clínica da Dra. Marina foi excelente. Desde o primeiro atendimento, tudo foi feito com muito cuidado e atenção. A Dra. Marina é super profissional, explica cada passo do tratamento de um jeito simples e passa muita segurança. O ambiente é super agradável, bem organizado e acolhedor. Recomendo demais!",
     rating: 5,
+    timeAgo: "recente",
   },
   {
     id: 2,
-    name: "Michael Rodriguez",
-    role: "Regular Patient",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
-    content: "I've been coming to DentalCare for years and have always received exceptional service. The staff is friendly, professional, and they always make dental visits stress-free.",
+    name: "Priscila Stravatti",
+    location: "Google Reviews",
+    treatment: "Paciente desde 2021",
+    highlight: "Não troco ela por nada!",
+    text: "Sou paciente da Dra. Marina desde 2021. Ela é uma ótima profissional, muito competente tecnicamente e sempre manteve um cuidado excepcional no pós atendimento. Ela acompanhou muito de perto a evolução do meu caso.",
     rating: 5,
+    timeAgo: "há 6 meses",
   },
   {
     id: 3,
-    name: "Emma Thompson",
-    role: "Cosmetic Dentistry Patient",
-    image: "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=600",
-    content: "The cosmetic work I had done transformed my smile completely. Dr. Williams and her team were thorough in explaining the process and the results exceeded my expectations.",
+    name: "EMC",
+    location: "Google Reviews",
+    treatment: "Atendimento Geral",
+    highlight: "Simplesmente impecável!",
+    text: "O atendimento da Dra. Marina Sanini da Rosa superou todas as minhas expectativas — profissionalismo, atenção aos detalhes e um cuidado genuíno com o paciente do início ao fim. Além da excelência técnica, o ambiente é muito acolhedor.",
     rating: 5,
+    timeAgo: "há 7 meses",
+  },
+  {
+    id: 4,
+    name: "Felipe Albornoz Neto",
+    location: "Google Reviews",
+    treatment: "Atendimento Geral",
+    highlight: "Atendimento de excelência!",
+    text: "Fui muito bem atendido na clínica. Ótimo ambiente. Destaque para as orientações super claras dadas, cuidado com o bem estar do paciente, atenção aos detalhes e conhecimento técnico dos profissionais.",
+    rating: 5,
+    timeAgo: "há 6 meses",
   },
 ];
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-  
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-  };
-  
   return (
-    <section id="testimonials" className="py-16 bg-gradient-to-br from-primary-light/10 to-white">
+    <section id="testimonials" className="py-16 bg-white">
       <div className="container-custom">
         <div className="section-heading">
-          <h2>What Our Patients Say</h2>
+          <h2>O Que Nossos Pacientes Dizem</h2>
           <p>
-            Don't just take our word for it. Hear from our patients about their
-            experiences with our dental care services.
+            A satisfação dos nossos pacientes é a nossa maior recompensa. Veja alguns depoimentos
+            de quem já transformou o sorriso com a gente.
           </p>
         </div>
-        
-        <div className="mt-12 relative max-w-4xl mx-auto">
-          <div className="overflow-hidden rounded-xl bg-white shadow-lg">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="bg-gray-50 rounded-2xl p-6 relative hover:shadow-lg transition-shadow duration-300"
             >
-              {testimonials.map((testimonial) => (
-                <div 
-                  key={testimonial.id}
-                  className="min-w-full p-8 md:p-12"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center gap-6">
-                    <div className="md:w-1/3">
-                      <div className="aspect-square w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto md:mx-0">
-                        <img 
-                          src={testimonial.image} 
-                          alt={testimonial.name} 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="md:w-2/3">
-                      <div className="flex mb-3">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                        ))}
-                      </div>
-                      
-                      <blockquote className="text-gray-700 italic mb-6">
-                        "{testimonial.content}"
-                      </blockquote>
-                      
-                      <div>
-                        <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                        <p className="text-gray-600">{testimonial.role}</p>
-                      </div>
-                    </div>
+              {/* Quote icon */}
+              <div className="absolute -top-4 left-6 bg-primary text-white p-2 rounded-lg">
+                <Quote className="w-5 h-5" />
+              </div>
+
+              {/* Rating */}
+              <div className="flex gap-1 mb-4 mt-2">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+
+              {/* Highlight */}
+              <p className="text-primary font-semibold text-lg mb-3">
+                "{testimonial.highlight}"
+              </p>
+
+              {/* Testimonial text */}
+              <p className="text-gray-600 mb-6 leading-relaxed text-sm">
+                {testimonial.text}
+              </p>
+
+              {/* Author info */}
+              <div className="border-t border-gray-200 pt-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                    <p className="text-sm text-gray-500">{testimonial.location}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-medium text-primary">{testimonial.treatment}</p>
+                    <p className="text-xs text-gray-400">{testimonial.timeAgo}</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Google Reviews Badge */}
+        <div className="mt-12 flex justify-center">
+          <a
+            href="https://www.google.com/search?q=Dra+Marina+Sanini+da+Rosa+-+Odontologia+Reviews"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-4 bg-gray-50 hover:bg-gray-100 px-6 py-4 rounded-full transition-colors"
+          >
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
               ))}
             </div>
-          </div>
-          
-          {/* Navigation Buttons */}
-          <button 
-            onClick={prevTestimonial}
-            className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-700" />
-          </button>
-          
-          <button 
-            onClick={nextTestimonial}
-            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="w-6 h-6 text-gray-700" />
-          </button>
-          
-          {/* Indicators */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-primary' : 'bg-gray-300'
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
+            <div className="text-sm">
+              <span className="font-semibold text-gray-900">5.0</span>
+              <span className="text-gray-500"> • Ver todas as avaliações no Google</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>

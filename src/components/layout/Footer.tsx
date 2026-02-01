@@ -30,38 +30,33 @@ const Footer = () => {
 
           {/* Links Rápidos */}
           <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Links Rápidos</h4>
+            <h4 className="text-white text-lg font-semibold mb-4">Navegação</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-primary transition-colors">
+                <a href="/" className="text-gray-400 hover:text-primary transition-colors">
                   Início
-                </Link>
-              </li>
-              {/* <li>
-                <Link to="/team" className="text-gray-400 hover:text-primary transition-colors">
-                  Nossa Equipe
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-400 hover:text-primary transition-colors">
-                  Blog
-                </Link>
-              </li> */}
-              <li>
-                <Link to="/contact" className="text-gray-400 hover:text-primary transition-colors">
-                  Contato
-                </Link>
-              </li>
-              <li>
-                <Link to="/#services" className="text-gray-400 hover:text-primary transition-colors">
+                <a href="/#services" className="text-gray-400 hover:text-primary transition-colors">
                   Serviços
-                </Link>
+                </a>
               </li>
-              {/* <li>
-                <Link to="/#testimonials" className="text-gray-400 hover:text-primary transition-colors">
+              <li>
+                <a href="/#casos" className="text-gray-400 hover:text-primary transition-colors">
+                  Resultados
+                </a>
+              </li>
+              <li>
+                <a href="/#clinica" className="text-gray-400 hover:text-primary transition-colors">
+                  A Clínica
+                </a>
+              </li>
+              <li>
+                <a href="/#testimonials" className="text-gray-400 hover:text-primary transition-colors">
                   Depoimentos
-                </Link>
-              </li> */}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -108,11 +103,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone className="w-5 h-5 mr-3 text-primary shrink-0" />
-                <span>(11) 97568-1709</span>
+                <a href="tel:+5511975681709" className="hover:text-primary transition-colors">
+                  (11) 97568-1709
+                </a>
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 text-primary shrink-0" />
-                <span>mrsanini@gmail.com</span>
+                <a href="mailto:mrsanini@gmail.com" className="hover:text-primary transition-colors">
+                  mrsanini@gmail.com
+                </a>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-primary shrink-0" />

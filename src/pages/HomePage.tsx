@@ -2,6 +2,9 @@ import { Helmet } from 'react-helmet';
 import CallToAction from '../components/home/CallToAction';
 import Hero from '../components/home/Hero';
 import Services from '../components/home/Services';
+import Testimonials from '../components/home/Testimonials';
+import BeforeAfter from '../components/home/BeforeAfter';
+import Clinic from '../components/home/Clinic';
 
 const HomePage = () => {
   return (
@@ -21,7 +24,9 @@ const HomePage = () => {
 
       <Hero />
       <Services />
-      {/* <Testimonials /> */}
+      <Testimonials />
+      <BeforeAfter />
+      <Clinic />
       <CallToAction />
     </>
   );
