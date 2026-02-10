@@ -18,7 +18,7 @@ const CallToAction = () => {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 md:p-12 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Agende sua Avaliação Gratuita</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Agende sua Avaliação</h2>
               <p className="text-gray-600 mb-6">
                 Dê o primeiro passo para transformar seu sorriso. Atendimento personalizado
                 com a Dra. Marina Sanini da Rosa.

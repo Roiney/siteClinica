@@ -133,7 +133,7 @@ const BeforeAfter = () => {
             Quero Transformar Meu Sorriso
           </button>
           <p className="text-sm text-gray-500 mt-4">
-            Avaliação gratuita e sem compromisso
+            Avaliação sem compromisso
           </p>
         </div>
 

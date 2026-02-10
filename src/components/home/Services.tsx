@@ -99,7 +99,7 @@ const Services = () => {
             className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
           >
             <MessageCircle className="w-5 h-5" />
-            Agendar Minha Avaliação Gratuita
+            Agendar Minha Avaliação
           </button>
           <p className="text-sm text-gray-500 mt-3">
             Resposta em até 2 horas

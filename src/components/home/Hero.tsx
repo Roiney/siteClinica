@@ -76,7 +76,7 @@ const Hero = () => {
                 className="btn bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 <MessageCircle className="w-5 h-5" />
-                Quero Minha Avaliação Gratuita
+                Agendar Minha Avaliação
               </button>
               <button
                 onClick={handleCall}
