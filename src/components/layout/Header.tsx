@@ -8,7 +8,7 @@ const Header = () => {
   const location = useLocation();
 
   const whatsappNumber = "5511975681709";
-  const whatsappMessage = "Olá! Gostaria de agendar uma avaliação com a Dra. Marina.";
+  const whatsappMessage = "Ola! Gostaria de agendar uma consulta com a Dra. Marina.";
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -21,13 +21,15 @@ const Header = () => {
   };
 
   const navLinks = [
-    { name: 'Início', path: '/', isAnchor: false },
-    { name: 'Serviços', path: '/#services', isAnchor: true },
+    { name: 'Inicio', path: '/', isAnchor: false },
+    { name: 'Servicos', path: '/#services', isAnchor: true },
     { name: 'Resultados', path: '/#casos', isAnchor: true },
-    { name: 'A Clínica', path: '/#clinica', isAnchor: true },
-    { name: 'Depoimentos', path: '/#testimonials', isAnchor: true },
+    { name: 'Sobre', path: '/sobre', isAnchor: false },
+    { name: 'Tratamentos', path: '/tratamentos', isAnchor: false },
+    { name: 'Blog', path: '/blog', isAnchor: false },
+    { name: 'Contato', path: '/contact', isAnchor: false },
   ];
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -36,33 +38,33 @@ const Header = () => {
         setIsScrolled(false);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
-  
+
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white shadow-md py-3' 
+        isScrolled
+          ? 'bg-white shadow-md py-3'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="container-custom">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="flex items-center"
           >
-            <img 
+            <img
               src="/MO-simbolo.png"
-              alt="Dra. Marina Sanini da Rosa" 
+              alt="Dra. Marina Sanini da Rosa"
               className="h-12 w-auto"
             />
             <span className={`ml-2 text-xl font-heading font-semibold ${
@@ -71,17 +73,29 @@ const Header = () => {
               Dra. Marina Sanini da Rosa
             </span>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-6">
             {navLinks.map((link) => (
-              <a
-                key={link.path}
-                href={link.path}
-                className={`font-medium transition-colors text-gray-800 hover:text-primary`}
-              >
-                {link.name}
-              </a>
+              link.isAnchor ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  className="font-medium transition-colors text-gray-800 hover:text-primary"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`font-medium transition-colors hover:text-primary ${
+                    location.pathname === link.path ? 'text-primary' : 'text-gray-800'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -102,7 +116,7 @@ const Header = () => {
               <span>WhatsApp</span>
             </button>
           </div>
-          
+
           {/* Mobile Menu Toggle */}
           <button
             className="md:hidden text-gray-800"
@@ -113,7 +127,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       <div
         className={`md:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 ${
@@ -122,14 +136,27 @@ const Header = () => {
       >
         <div className="container-custom flex flex-col space-y-2">
           {navLinks.map((link) => (
-            <a
-              key={link.path}
-              href={link.path}
-              onClick={() => setIsOpen(false)}
-              className="py-3 px-4 font-medium text-gray-800 hover:text-primary hover:bg-gray-50 rounded-lg"
-            >
-              {link.name}
-            </a>
+            link.isAnchor ? (
+              <a
+                key={link.path}
+                href={link.path}
+                onClick={() => setIsOpen(false)}
+                className="py-3 px-4 font-medium text-gray-800 hover:text-primary hover:bg-gray-50 rounded-lg"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`py-3 px-4 font-medium hover:bg-gray-50 rounded-lg ${
+                  location.pathname === link.path ? 'text-primary bg-primary/5' : 'text-gray-800 hover:text-primary'
+                }`}
+              >
+                {link.name}
+              </Link>
+            )
           ))}
           <hr className="my-2 border-gray-200" />
           <button

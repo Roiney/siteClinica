@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, User, Tag } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 
 interface BlogPostProps {
   id: number;
@@ -26,10 +26,10 @@ const BlogPost: React.FC<BlogPostProps> = ({
   return (
     <article className={`card h-full flex flex-col overflow-hidden ${featured ? 'md:col-span-2' : ''}`}>
       <div className={`aspect-video overflow-hidden ${featured ? 'md:aspect-[16/9]' : ''}`}>
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>
       <div className="p-6 flex-grow flex flex-col">

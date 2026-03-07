@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300">
       <div className="container-custom pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Informações da Clínica */}
+          {/* Informacoes da Clinica */}
           <div>
             <div className="flex items-center text-2xl font-heading font-bold text-white mb-4">
               <img
@@ -18,29 +18,37 @@ const Footer = () => {
               />
               <span>Dra. Marina Sanini da Rosa</span>
             </div>
-            <p className="mb-6 text-gray-400">
-              Atendimento odontológico de excelência, com tecnologia de ponta e cuidado humanizado há mais de 10 anos.
+            <p className="mb-2 text-gray-400">
+              Atendimento odontologico de excelencia, com tecnologia de ponta e cuidado humanizado ha mais de 10 anos.
+            </p>
+            <p className="mb-6 text-gray-500 text-sm">
+              CRO-SP 128955
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/ma.ri.marina/" className="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
-              </a>   
+              </a>
             </div>
           </div>
 
-          {/* Links Rápidos */}
+          {/* Links Rapidos */}
           <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Navegação</h4>
+            <h4 className="text-white text-lg font-semibold mb-4">Navegacao</h4>
             <ul className="space-y-2">
               <li>
                 <a href="/" className="text-gray-400 hover:text-primary transition-colors">
-                  Início
+                  Inicio
                 </a>
               </li>
               <li>
-                <a href="/#services" className="text-gray-400 hover:text-primary transition-colors">
-                  Serviços
-                </a>
+                <Link to="/sobre" className="text-gray-400 hover:text-primary transition-colors">
+                  Sobre a Dra. Marina
+                </Link>
+              </li>
+              <li>
+                <Link to="/tratamentos" className="text-gray-400 hover:text-primary transition-colors">
+                  Tratamentos
+                </Link>
               </li>
               <li>
                 <a href="/#casos" className="text-gray-400 hover:text-primary transition-colors">
@@ -48,50 +56,50 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/#clinica" className="text-gray-400 hover:text-primary transition-colors">
-                  A Clínica
-                </a>
+                <Link to="/blog" className="text-gray-400 hover:text-primary transition-colors">
+                  Blog
+                </Link>
               </li>
               <li>
-                <a href="/#testimonials" className="text-gray-400 hover:text-primary transition-colors">
-                  Depoimentos
-                </a>
+                <Link to="/contact" className="text-gray-400 hover:text-primary transition-colors">
+                  Contato
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Serviços */}
+          {/* Servicos */}
           <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Nossos Serviços</h4>
+            <h4 className="text-white text-lg font-semibold mb-4">Nossos Servicos</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/#services" className="text-gray-400 hover:text-primary transition-colors">
-                  Implantes Dentários
+                <Link to="/tratamentos#reabilitacao-oral" className="text-gray-400 hover:text-primary transition-colors">
+                  Reabilitacao Oral
                 </Link>
               </li>
               <li>
-                <Link to="/#services" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/tratamentos#implantes-dentarios" className="text-gray-400 hover:text-primary transition-colors">
+                  Implantes Dentarios
+                </Link>
+              </li>
+              <li>
+                <Link to="/tratamentos#odontologia-estetica" className="text-gray-400 hover:text-primary transition-colors">
+                  Odontologia Estetica
+                </Link>
+              </li>
+              <li>
+                <Link to="/tratamentos#odontologia-geral" className="text-gray-400 hover:text-primary transition-colors">
                   Odontologia Geral
                 </Link>
               </li>
               <li>
-                <Link to="/#services" className="text-gray-400 hover:text-primary transition-colors">
-                  Odontologia Estética
-                </Link>
-              </li>
-              <li>
-                <Link to="/#services" className="text-gray-400 hover:text-primary transition-colors">
-                  Ortodontia
-                </Link>
-              </li>
-              <li>
-                <Link to="/#services" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/tratamentos#odontopediatria" className="text-gray-400 hover:text-primary transition-colors">
                   Odontopediatria
                 </Link>
               </li>
               <li>
-                <Link to="/#services" className="text-gray-400 hover:text-primary transition-colors">
-                  Atendimento de Urgência
+                <Link to="/tratamentos#ortodontia" className="text-gray-400 hover:text-primary transition-colors">
+                  Ortodontia
                 </Link>
               </li>
             </ul>
@@ -117,14 +125,14 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 mr-3 text-primary shrink-0" />
                 <span>
                   Avenida Imperatriz Leopoldina, 957 - Sala 113<br />
-                  Vila Leopoldina - São Paulo/SP - CEP 05305-011
+                  Vila Leopoldina - Sao Paulo/SP - CEP 05305-011
                 </span>
               </li>
               <li className="flex items-start">
                 <Clock className="w-5 h-5 mr-3 text-primary shrink-0" />
                 <div>
-                  <p>Segunda a Sexta: 8h às 18h</p>
-                  <p>Sábado: 9h às 13h</p>
+                  <p>Segunda a Sexta: 8h as 18h</p>
+                  <p>Sabado: 9h as 13h</p>
                   <p>Domingo: Fechado</p>
                 </div>
               </li>
@@ -134,21 +142,13 @@ const Footer = () => {
 
         <hr className="border-gray-800 my-8" />
 
-        {/* Rodapé Inferior */}
+        {/* Rodape Inferior */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500">
-            &copy; {currentYear} Dra. Marina Sanini da Rosa. Todos os direitos reservados.
+            &copy; {currentYear} Dra. Marina Sanini da Rosa - CRO-SP 128955. Todos os direitos reservados.
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6 text-sm text-gray-500">
-            <Link to="/privacy-policy" className="hover:text-primary transition-colors">
-              Política de Privacidade
-            </Link>
-            <Link to="/terms-of-service" className="hover:text-primary transition-colors">
-              Termos de Uso
-            </Link>
-            <Link to="/sitemap" className="hover:text-primary transition-colors">
-              Mapa do Site
-            </Link>
+            <span>Responsavel Tecnica: Dra. Marina Sanini da Rosa - CRO-SP 128955</span>
           </div>
         </div>
       </div>

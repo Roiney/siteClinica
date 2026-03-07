@@ -104,6 +104,10 @@ const BeforeAfter = () => {
               <div className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-2 py-1 rounded-full shadow-md">
                 Antes / Depois
               </div>
+              {/* CRO Compliance - obrigatorio pelo CFO */}
+              <div className="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-1 rounded z-10">
+                Dra. Marina S. Da Rosa - CRO-SP 128955
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <h3 className="text-white font-semibold text-lg">{caseItem.title}</h3>
@@ -175,6 +179,7 @@ const BeforeAfter = () => {
             <div className="text-center mt-4">
               <h3 className="text-white text-xl font-semibold">{cases[selectedImage].title}</h3>
               <p className="text-gray-300">{cases[selectedImage].description}</p>
+              <p className="text-gray-500 text-xs mt-2">Dra. Marina Sanini Da Rosa - CRO-SP 128955</p>
             </div>
           </div>
 
