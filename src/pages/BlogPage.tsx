@@ -7,7 +7,6 @@ const categories = [
   "Implantes Dentarios",
   "Reabilitacao Oral",
   "Odontologia Estetica",
-  "Odontopediatria",
   "Saude Bucal",
   "Urgencia Odontologica"
 ];
